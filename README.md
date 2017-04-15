@@ -1,4 +1,5 @@
 # YoduPlayer
+
 一款支持 instantclick 或者 pjax 的背景音乐播放器插件（typecho博客插件）
 
 > 1，支持自定义播放器css
@@ -11,11 +12,13 @@
 
 
 ##使用方法
+
 下载压缩包, 解压，得到名为YoduPlayer的文件夹，如果不是请将文件夹重命名为YoduPlayer，之后上传到你博客中的 /usr/plugins 目录，在后台启用即可
 
 插件后台配置歌曲格式: 
 
 {title:"xxx", artist:"xxx", cover:"http:xxxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。
+
 **请保证歌曲列表里至少有一首歌**！
 
 ##添加网易云音乐(需主机支持curl扩展)

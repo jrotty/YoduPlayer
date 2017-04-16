@@ -42,7 +42,7 @@ if (a == musicArr.length - 1) {
 yaudio.fm=sj.cover;
         yaudio.play();var autopause=0;
        oyd.className = 'iconfont icon-music';
-
+document.getElementById("ydfm").className = "Rotation";
 document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;
 }
@@ -60,7 +60,7 @@ a =musicArr.length - 1;
 yaudio.fm=sj.cover;
         yaudio.play();var autopause=0;
        oyd.className = 'iconfont icon-music';
-
+document.getElementById("ydfm").className = "Rotation";
 document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;
 }

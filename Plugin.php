@@ -110,6 +110,7 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widg
         echo '<script data-no-instant>
 var yaudio = new Audio();
 yaudio.controls = true;
+yaudio.loop = false;
 var musicArr=[
 '.$options->musicList.'
               ];

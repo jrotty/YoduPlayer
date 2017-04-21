@@ -119,13 +119,14 @@ var sj=musicArr[a];
 yaudio.src=sj.mp3;
 yaudio.ti=sj.title;
 yaudio.art=sj.artist;
-yaudio.fm=sj.cover;
- ';
+yaudio.fm=sj.cover;';
 if(Typecho_Widget::widget('Widget_Options')->Plugin('YoduPlayer')->bof=='1'){	
-			echo 'yaudio.play();</script>'. "\n";
-		}else{	echo '</script>'. "\n";
+			echo 'yaudio.play();'. "\n";
 }
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js"></script>' . "\n";        
+echo '</script>';
+
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js"></script>' . "\n";        
     }
 
 }

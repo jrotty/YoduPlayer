@@ -104,7 +104,7 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widg
 <span onclick="playbtu();"><i id="ydmc"></i></span>
 <span onclick="next();"><i class="iconfont icon-you"></i></span>
 </div>
-</div>
+</div></div>
              ';
        
         echo '<script data-no-instant>

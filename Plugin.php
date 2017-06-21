@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 1.0.1
+ * @version 1.1.0
  * @link http://qqdie.com/archives/typecho-yoduplayer.html
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -37,8 +37,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
         $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, 
 '{title:"Alice",artist:"米白",mp3:"//p2.music.126.net/7_DtDbZXhlm-FWGzplUocg==/18802748347310691.mp3",cover:"//p3.music.126.net/R86tDfWlpXzhJFO1KJgfbQ==/17924238556217288.jpg?param=106x106",},
 {title:"Old Memory",artist:"三輪学",mp3:"//p2.music.126.net/_b_IF6-KM0UHDJwP9u0Bdw==/1394180758436430.mp3",cover:"//p3.music.126.net/OpgpNNPKznDDMxoBqVJy-Q==/2464005557906815.jpg?param=106x106",},
-',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！<br><br><div style="background-color:#56A5CE;padding:5px 8px;max-width:250px;border-radius: 2px;"><a href="'.Helper::options()->pluginUrl.'/YoduPlayer/IDExplain.php" target="_blank" style="font-size:14px;color:#fff;outline:none;text-decoration:none;">网易云音乐id解析(主机需支持curl扩展)</a>
-        	</div>请自行去网易云音乐网页版获取音乐id(具体在每个音乐项目的网址最后会有个id)。<b>将解析出的音乐链接复制到上面歌曲列表里(注意检查与现有歌曲是否用英文,隔开)</b>'));
+',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
         $form->addInput($musicList);
 
             $sok = new Typecho_Widget_Helper_Form_Element_Textarea('sok', NULL, 
@@ -63,19 +62,19 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'red'==Typecho_Widget::widg
 	echo '<style>#bgmplayer {background: #F1587E;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'purple'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: #800080;}</style>';
+	echo '<style>#bgmplayer {background: #800080;}#jindu {background-color: #FF6363;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'black'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: #000000;}</style>';
+	echo '<style>#bgmplayer {background: #000000;}#jindu {background-color: #CCC;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'hei'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: rgba(0, 0, 0, 0.5);}</style>';
+	echo '<style>#bgmplayer {background: rgba(0, 0, 0, 0.5);}#jindu {background-color: rgba(251, 251, 251, 0.68);}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'bai'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}</style>';
+	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}#jindu {background-color: rgba(0, 0, 0, 0.32);}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'block'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {box-shadow: 0 0 5px #5D5D5D;border-radius: 0 0 0 5px;}</style>';
+	echo '<style>#bgmplayer {box-shadow: 0 0 5px #5D5D5D;border-radius: 0 0 0 5px;}#jindu {border-radius: 0 0 0 5px;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: #888;}</style>';
@@ -104,7 +103,7 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widg
 <span onclick="playbtu();"><i id="ydmc"></i></span>
 <span onclick="next();"><i class="iconfont icon-you"></i></span>
 </div>
-</div></div>
+</div><div id="jindu"></div></div>
              ';
        
         echo '<script data-no-instant>

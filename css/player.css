@@ -54,11 +54,11 @@ transform: translateX(0px);
 span.bgmbuttom{
     font-size: 12px;
     float: left;
-    padding: 27.5px 5px 27.5px 5px;
+    padding: 25.5px 5px 25.5px 5px;
 }
 #bgmpanel {
     width: 240px;
-    height: 69px;
+    height: 54px;
     padding: 5px 0;
 }
 #jindu {width:0%;

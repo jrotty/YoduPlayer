@@ -1,7 +1,5 @@
 # YoduPlayer
 
-> 2017,06.12更新，支持显示音乐播放进度条
-
 一款支持 instantclick 或者 pjax 的背景音乐播放器插件（typecho博客插件）
 
 > 1，支持自定义播放器css

@@ -13,6 +13,7 @@ var setProgress = function(value){
 		var currentSec = parseInt(value%60) < 10 ? '0' + parseInt(value%60) : parseInt(value%60),
 			ratio = value / yaudio.duration * 100;
 
+document.getElementById('jindu').style.width=ratio+'%';
 document.getElementById('ytime').innerHTML = (parseInt(value/60)+':'+currentSec);
 	}
 

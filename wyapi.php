@@ -27,11 +27,7 @@
             -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
             box-shadow: 0 1px 2px rgba(0,0,0,.05);
         }
-        body {      background-image: url(https://api.ikmoe.com/moeu-rand-background.php);
-    background-attachment: fixed;
-    background-size: cover;
- background-position: center;
-background-repeat: no-repeat;
+        body {      background: #FFF;
         }
         #input {
             width: 280px;

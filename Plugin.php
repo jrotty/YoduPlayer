@@ -74,8 +74,8 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'hei'==Typecho_Widget::widg
 if(Typecho_Widget::widget('Widget_Options')->skin && 'bai'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}#jindu {background-color: rgba(0, 0, 0, 0.32);}</style>';
 }
-if(Typecho_Widget::widget('Widget_Options')->skin && 'block'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {box-shadow: 0 0 5px #5D5D5D;border-radius: 0 0 0 5px;}#jindu {border-radius: 0 0 0 5px;}</style>';
+if(Typecho_Widget::widget('Widget_Options')->skin && 'tea'==Typecho_Widget::widget('Widget_Options')->skin){
+	echo '<style>#bgmplayer {background: #795548;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: #888;}</style>';

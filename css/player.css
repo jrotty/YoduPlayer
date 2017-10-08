@@ -79,7 +79,7 @@ span.bgmbuttom{
 }
 #bgmpanel {
     width: 240px;
-    height: 54px;
+    height: 65px;
     padding: 5px 0;
 }
 #jindu {width:0%;
@@ -131,7 +131,7 @@ animation: rotation 9.8s linear infinite;
 -o-animation: rotation 9.8s linear infinite;
 }
 .yd-lib{   overflow: hidden;}
-ol#playlist {    margin: 15px 3px 8px 0;
+ol#playlist {    margin: 0 3px 8px 0;
     display: none;        max-width: 235px;
     padding-left:5px;max-height: 130px;
     overflow-y: auto;

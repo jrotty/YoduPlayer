@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'ydico';
-  src:  url('fonts/icomoon.eot?ov9ajc');
-  src:  url('fonts/icomoon.eot?ov9ajc#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ov9ajc') format('truetype'),
-    url('fonts/icomoon.woff?ov9ajc') format('woff'),
-    url('fonts/icomoon.svg?ov9ajc#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?cdoluk');
+  src:  url('fonts/icomoon.eot?cdoluk#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?cdoluk') format('truetype'),
+    url('fonts/icomoon.woff?cdoluk') format('woff'),
+    url('fonts/icomoon.svg?cdoluk#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,6 +22,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-list:before {
+  content: "\f00b";
+}
 .icon-music:before {
   content: "\f001";
 }
@@ -43,13 +47,30 @@
     color: white;
     transition: transform .5s ease;
 }
+#bgmplayer ::-webkit-scrollbar {
+    width: 3px !important;
+}
+
+#bgmplayer ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+    border-radius: 10px !important;
+}
+
+#bgmplayer ::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    background: rgba(0,0,0,0.1) !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important;
+}
+#bgmplayer ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,0,0,0.4) !important;
+}
 .bgmplayer{
 transform: translateX(218px);    -webkit-transform: translateX(218px);
-    -ms-transform: translateX(218px);
+ -ms-transform: translateX(218px);
 }
 .bgmon{
-transform: translateX(0px);    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
+transform: translateX(0px);transform: translateX(0px);    -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
 }
 span.bgmbuttom{
     font-size: 12px;
@@ -64,7 +85,7 @@ span.bgmbuttom{
 #jindu {width:0%;
     height: 3px;
     background-color: #000;
-position: absolute;
+    position: absolute;
     bottom: 0;
 }
 .bgmfm {
@@ -92,8 +113,7 @@ position: absolute;
 }
 .bgmbtn span {
     font-size: 15px;
-    margin: 0 5px 0 0;
-    padding: 5px 8px;
+    padding: 5px 5px;
 }
 .bgmbtn span:hover{
     background-color: rgba(228, 228, 228, 0.54);
@@ -109,4 +129,10 @@ animation: rotation 9.8s linear infinite;
 -moz-animation: rotation 9.8s linear infinite;
 -webkit-animation: rotation 9.8s linear infinite;
 -o-animation: rotation 9.8s linear infinite;
+}
+.yd-lib{   overflow: hidden;}
+ol#playlist {    margin: 15px 3px 8px 0;
+    display: none;        max-width: 235px;
+    padding-left:5px;max-height: 130px;
+    overflow-y: auto;
 }

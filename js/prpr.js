@@ -1,3 +1,19 @@
+$(document).ready(function(){
+  // Load playlist
+	for (var i = 0; i < musicArr.length; i++){
+		var item = musicArr[i];var anum = i+1;
+      if(anum<10){anum='0'+anum;}
+		$('#playlist').append('<li class="yd-lib"><span class="anum">'+anum+'.</span><strong style="margin-left: 5px;">'+item.title+'</strong><span style="float: right;" class="artist">'+item.artist+'</span></li>');
+		if (item.mp3 == "") {
+			$('#playlist li').eq(i).css('color', '#ddd');
+		}
+	}
+$('#playlist li').click(function(){var a= $(this).index();
+ dianbo(a);
+  });
+});
+
+
 var ody=document.getElementById('ydmc');
 if (yaudio.paused) {var autopause=0;
 ody.className = 'icon-bofang';

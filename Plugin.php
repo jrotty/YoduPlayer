@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 1.5.0
+ * @version 1.7.0试行版
  * @link http://qqdie.com/archives/typecho-yoduplayer.html
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -103,10 +103,12 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widg
 <span onClick="previous();"><i class="icon-zuo"></i></span>
 <span onclick="playbtu();"><i id="ydmc"></i></span>
 <span onclick="next();"><i class="icon-you"></i></span>
+<span onclick="liebiao();"><i class="icon-list"></i></span>
 </div>
-</div><div id="jindu"></div></div>
+</div><div id="jindu"></div>
+		<ol id="playlist"></ol></div>
              ';
-       
+
         echo '<script data-no-instant>
 var yaudio = new Audio();
 yaudio.controls = true;

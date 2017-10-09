@@ -8,7 +8,7 @@ $(document).ready(function(){
 			$('#playlist li').eq(i).css('color', '#ddd');
 		}
 	}
-$('#playlist li').click(function(){var a= $(this).index();
+$('#playlist li').click(function(){var a= $(this).index();  
  dianbo(a);
   });
 });

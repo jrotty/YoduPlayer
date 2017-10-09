@@ -15,6 +15,7 @@ document.getElementById("ydfm").className = "Rotation";
             yaudio.pause();
             oyd.className = 'icon-bofang';document.getElementById("ydfm").className = "";
         }
+  $('#playlist li').removeClass('yd-playing').eq(a).addClass('yd-playing');
 }
 function next(b) {
 var oyd=document.getElementById('ydmc');if(b === undefined){
@@ -32,7 +33,7 @@ if (a == musicArr.length - 1) {
        oyd.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
 document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
-document.getElementById("ydfm").src=yaudio.fm;
+document.getElementById("ydfm").src=yaudio.fm;$('#playlist li').removeClass('yd-playing').eq(a).addClass('yd-playing');
 }
 function previous(){
 var oyd=document.getElementById('ydmc');
@@ -50,7 +51,7 @@ if (a == 0) {
        oyd.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
 document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
-document.getElementById("ydfm").src=yaudio.fm;
+document.getElementById("ydfm").src=yaudio.fm;$('#playlist li').removeClass('yd-playing').eq(a).addClass('yd-playing');
 }
 
 

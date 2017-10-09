@@ -69,8 +69,8 @@ transform: translateX(218px);    -webkit-transform: translateX(218px);
  -ms-transform: translateX(218px);
 }
 .bgmon{
-transform: translateX(0px);transform: translateX(0px);    -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
+transform: translateX(0px);    -webkit-transform: translateX(0);
+   -ms-transform: translateX(0);
 }
 span.bgmbuttom{
     font-size: 12px;
@@ -130,9 +130,13 @@ animation: rotation 9.8s linear infinite;
 -webkit-animation: rotation 9.8s linear infinite;
 -o-animation: rotation 9.8s linear infinite;
 }
-.yd-lib{   overflow: hidden;}
-ol#playlist {    margin: 0 3px 8px 0;
-    display: none;        max-width: 235px;
-    padding-left:5px;max-height: 130px;
+.yd-lib{   overflow: hidden;    padding-left:5px;    padding-right: 3px;}
+ol#playlist { border-top: 1px solid rgba(138, 138, 138, 0.21);   margin:0 0 8px 0;
+    display: none;        max-width: 240px;
+max-height: 130px;padding-left: 0px;
     overflow-y: auto;
+}
+li.yd-lib:hover,.yd-playing {
+    background: rgba(165, 205, 255, 0.89);padding-left: 3px;
+    border-left: 2px solid #000bff;
 }

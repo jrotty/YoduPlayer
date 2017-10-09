@@ -60,25 +60,25 @@ if(Typecho_Widget::widget('Widget_Options')->Plugin('YoduPlayer')->sxj=='0'){
 if(Typecho_Widget::widget('Widget_Options')->Plugin('YoduPlayer')->yoduc=='1'){
 
 if(Typecho_Widget::widget('Widget_Options')->skin && 'red'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: #F1587E;}</style>';
+	echo '<style>#bgmplayer {background: #F1587E;}li.yd-lib:hover, .yd-playing {background: rgba(0,0,0,.12);border-left: 2px solid #444;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'purple'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: #800080;}#jindu {background-color: #FF6363;}</style>';
+	echo '<style>#bgmplayer {background: #800080;}#jindu {background-color:#000bff;}li.yd-lib:hover, .yd-playing {background: rgba(238, 238, 238, 0.29);}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'black'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: #000000;}#jindu {background-color: #CCC;}</style>';
+	echo '<style>#bgmplayer {background: #000000;}#jindu {background-color: #CCC;}li.yd-lib:hover, .yd-playing {background: rgba(228, 228, 228, 0.5);border-left: 2px solid #fff;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'hei'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: rgba(0, 0, 0, 0.5);}#jindu {background-color: rgba(251, 251, 251, 0.68);}</style>';
+	echo '<style>#bgmplayer {background: rgba(0, 0, 0, 0.5);}#jindu {background-color: rgba(251, 251, 251, 0.68);}li.yd-lib:hover, .yd-playing {background: rgba(0,0,0,.5);border-left: 2px solid #ffffff;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'bai'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}#jindu {background-color: rgba(0, 0, 0, 0.32);}</style>';
+	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}#jindu {background-color: rgba(0, 0, 0, 0.32);}li.yd-lib:hover, .yd-playing {background: rgba(0, 0, 0, 0.08);border-left: 2px solid #0c0c0c;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'tea'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: #795548;}</style>';
+	echo '<style>#bgmplayer {background: #795548;}li.yd-lib:hover, .yd-playing {background: rgba(0,0,0,.3);border-left: 3px solid #d00000;}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widget('Widget_Options')->skin){
-	echo '<style>#bgmplayer {background: #888;}</style>';
+	echo '<style>#bgmplayer {background: #888;}li.yd-lib:hover, .yd-playing {background: rgba(0,0,0,.5);border-left: 2px solid #00c7ff;}</style>';
 }
 
 }

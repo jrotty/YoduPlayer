@@ -100,3 +100,6 @@ li.yd-lib:hover,.yd-playing {
     background: rgba(165, 205, 255, 0.89);padding-left: 3px;
     border-left: 2px solid #000bff;
 }
+@media only screen and (max-width:768px){#bgmplayer {
+    top: 50px;
+}}

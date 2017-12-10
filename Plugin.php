@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 1.7.5
+ * @version 1.8.0
  * @link http://qqdie.com/archives/typecho-yoduplayer.html
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -95,7 +95,7 @@ if($options->musicList==""){$gqlb='{title:"風の道",artist:"conte-de-fees.com"
 <i id="ydmusic" class="icon-music"></i>
 </span>
 <div id="bgmpanel">
-<div class="bgmfm"><img id="ydfm" src=""></div>
+<div class="bgmfm"><img id="ydfm" src="" onerror=\'javascript:this.src="'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg";this.onerror=null;\'></div>
 <div class="bgmtitle"><span id="ydtitle"></span></div>
 <div class="bgmtime"><span id="ytime">0:00</span></div>
 <div class="bgmbtn">

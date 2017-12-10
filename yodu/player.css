@@ -28,6 +28,9 @@
 transform: translateX(218px);    -webkit-transform: translateX(218px);
  -ms-transform: translateX(218px);
 }
+span.bgmbuttom,.bgmbtn span,#playlist li{
+    cursor: url(../../../themes/Yodu/images/pointer.cur),pointer;
+}
 .bgmon{
 transform: translateX(0px);    -webkit-transform: translateX(0);
    -ms-transform: translateX(0);

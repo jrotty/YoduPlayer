@@ -68,7 +68,7 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'purple'==Typecho_Widget::w
 if(Typecho_Widget::widget('Widget_Options')->skin && 'black'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: #000000;}#jindu {background-color: #CCC;}</style>';
 }
-if(Typecho_Widget::widget('Widget_Options')->skin && 'hei'==Typecho_Widget::widget('Widget_Options')->skin){
+if(Typecho_Widget::widget('Widget_Options')->skin && 'hei'==Typecho_Widget::widget('Widget_Options')->skin || 'sd'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: rgba(0, 0, 0, 0.5);}#jindu {background-color: rgba(251, 251, 251, 0.68);}</style>';
 }
 if(Typecho_Widget::widget('Widget_Options')->skin && 'bai'==Typecho_Widget::widget('Widget_Options')->skin){

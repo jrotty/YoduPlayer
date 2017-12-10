@@ -1,3 +1,14 @@
+$(document).click(function(){
+// 点击播放器外面的事物时关闭抽屉
+  $("ol#playlist").hide();
+$("#bgmplayer").removeClass("bgmon");
+});
+$("#bgmplayer").click(function(event){
+    event.stopPropagation();
+});
+
+
+
 $(document).ready(function(){
   // Load playlist
 	for (var i = 0; i < musicArr.length; i++){

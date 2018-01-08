@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 1.8.0
+ * @version 1.9.0
  * @link http://qqdie.com/archives/typecho-yoduplayer.html
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -68,16 +68,16 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'purple'==Typecho_Widget::w
 if(Typecho_Widget::widget('Widget_Options')->skin && 'black'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: #000000;}#jindu {background-color: #CCC;}</style>';
 }
-if(Typecho_Widget::widget('Widget_Options')->skin && 'hei'==Typecho_Widget::widget('Widget_Options')->skin || 'sd'==Typecho_Widget::widget('Widget_Options')->skin){
+if(Typecho_Widget::widget('Widget_Options')->skin && 'hei.css'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: rgba(0, 0, 0, 0.5);}#jindu {background-color: rgba(251, 251, 251, 0.68);}</style>';
 }
-if(Typecho_Widget::widget('Widget_Options')->skin && 'bai'==Typecho_Widget::widget('Widget_Options')->skin){
+if(Typecho_Widget::widget('Widget_Options')->skin && 'bai.css'==Typecho_Widget::widget('Widget_Options')->skin || 'white.css'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}#jindu {background-color: rgba(0, 0, 0, 0.32);}</style>';
 }
-if(Typecho_Widget::widget('Widget_Options')->skin && 'tea'==Typecho_Widget::widget('Widget_Options')->skin){
+if(Typecho_Widget::widget('Widget_Options')->skin && 'tea.css'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: #795548;}</style>';
 }
-if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widget('Widget_Options')->skin){
+if(Typecho_Widget::widget('Widget_Options')->skin && 'old.css'==Typecho_Widget::widget('Widget_Options')->skin){
 	echo '<style>#bgmplayer {background: #888;}</style>';
 }
 

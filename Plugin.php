@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 1.9.5
+ * @version 2.0.0
  * @link http://qqdie.com/archives/typecho-yoduplayer.html
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -17,12 +17,9 @@ class YoduPlayer_Plugin implements Typecho_Plugin_Interface
 	/* 禁用插件方法 */
 	public static function deactivate(){}
     public static function config(Typecho_Widget_Helper_Form $form){
-      
-$yoduc = new Typecho_Widget_Helper_Form_Element_Radio(
-        'yoduc', array('0'=> '默认', '1'=> 'YoDu主题'), 0, '主题选择',
-            '使用默认即可，如果你是用的YoDu主题模板，选择第二个不会额外加载字体文件，并且会根据yodu主题皮肤自动变色');
-        $form->addInput($yoduc);
-
+       if(strcasecmp(Helper::options()->theme,'yodu')==0){
+           echo '检测到您使用的是<b>'.Helper::options()->theme.'</b>模板，已为您启动定制策略！';
+       }
  $random = new Typecho_Widget_Helper_Form_Element_Radio(
             'random', array('0' => '不随机播放', '1' => '随机播放'), 0, '随机播放设置',
             '随机播放顾名思义，就是页面打开后随机选择列表一首音乐播放');
@@ -51,7 +48,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
     
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
-if(Helper::options()->Plugin('YoduPlayer')->yoduc=='1'){
+ if(strcasecmp(Helper::options()->theme,'yodu')==0){
         $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/yodu/player.css';
     }else{
         $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css';
@@ -60,8 +57,7 @@ if(Helper::options()->Plugin('YoduPlayer')->yoduc=='1'){
 if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){	
 			echo '<style>@media only screen and (max-width:767px){#bgmplayer{display:none}}</style>'. "\n";
 }
-if(Helper::options()->Plugin('YoduPlayer')->yoduc=='1'){
-
+ if(strcasecmp(Helper::options()->theme,'yodu')==0){
 if(Helper::options()->skin && 'red'==Helper::options()->skin){
 	echo '<style>#bgmplayer {background: #F1587E;}li.yd-lib:hover, .yd-playing {background: rgba(255, 255, 255, 0.7);border-left: 3px solid #252525;}</style>';
 }

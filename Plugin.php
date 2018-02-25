@@ -23,7 +23,10 @@ $yoduc = new Typecho_Widget_Helper_Form_Element_Radio(
             '使用默认即可，如果你是用的YoDu主题模板，选择第二个不会额外加载字体文件，并且会根据yodu主题皮肤自动变色');
         $form->addInput($yoduc);
 
-
+ $random = new Typecho_Widget_Helper_Form_Element_Radio(
+            'random', array('0' => '不随机播放', '1' => '随机播放'), 0, '随机播放设置',
+            '随机播放顾名思义，就是页面打开后随机选择列表一首音乐播放');
+        $form->addInput($random);
 
        $bof = new Typecho_Widget_Helper_Form_Element_Radio(
         'bof', array('0'=> '不自动播放', '1'=> '自动播放'), 0, '播放设置',
@@ -114,9 +117,10 @@ yaudio.controls = true;
 yaudio.loop = false;
 var musicArr=[
 '.$gqlb.'
-              ];
-var a=0;
-var sj=musicArr[a];
+              ];';
+	      if (Typecho_Widget::widget('Widget_Options')->Plugin('YoduPlayer')->random == '1') {echo 'var a=parseInt(Math.random()*musicArr.length);'. "\n";}else{
+echo 'var a=0;'. "\n";}
+echo 'var sj=musicArr[a];
 yaudio.src=sj.mp3;
 yaudio.ti=sj.title;
 yaudio.art=sj.artist;

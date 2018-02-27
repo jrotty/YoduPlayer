@@ -132,11 +132,14 @@ animation: rotation 9.8s linear infinite;
 }
 .yd-lib{   overflow: hidden;    padding-left:5px;    padding-right: 3px;}
 ol#playlist { border-top: 1px solid rgba(138, 138, 138, 0.21);   margin:0 0 8px 0;
-    display: none;        max-width: 240px;
+    display: none;       width: 240px;
 max-height: 130px;padding-left: 0px;
     overflow-y: auto;
 }
-li.yd-lib:hover,.yd-playing {
-    background: rgba(165, 205, 255, 0.89);padding-left: 3px;
-    border-left: 2px solid #000bff;
+.yd-playing {
+    border-left: 3px solid #ff0000;
+}
+li.yd-lib:hover{
+background-color: #fff;
+    color: black;
 }

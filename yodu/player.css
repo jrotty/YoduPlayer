@@ -99,9 +99,12 @@ ol#playlist { border-top: 1px solid rgba(138, 138, 138, 0.21);   margin:0 0 8px 
 max-height: 130px;padding-left: 0px;
     overflow-y: auto;
 }
-li.yd-lib:hover,.yd-playing {
-    background: rgba(165, 205, 255, 0.89);padding-left: 3px;
-    border-left: 2px solid #000bff;
+.yd-playing {
+    border-left: 3px solid #ff0000;
+}
+li.yd-lib:hover{
+background-color: #fff;
+    color: black;
 }
 @media only screen and (max-width:768px){#bgmplayer {
     top: 50px;

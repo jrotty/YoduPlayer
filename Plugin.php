@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.0.0
+ * @version 2.1.0
  * @link http://qqdie.com/archives/typecho-yoduplayer.html
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -58,8 +58,20 @@ if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){
 			echo '<style>@media only screen and (max-width:767px){#bgmplayer{display:none}}</style>'. "\n";
 }
  if(strcasecmp(Helper::options()->theme,'yodu')==0){
+   if(Helper::options()->skin && 'mr'==Helper::options()->skin){
+if(Helper::options()->color && 'red'==Helper::options()->color){
+	echo '<style>#bgmplayer {background: #F1587E;}.yd-playing { border-left: 3px solid #ffffff;}</style>';
+}
+if(Helper::options()->color && 'purple'==Helper::options()->color){
+	echo '<style>#bgmplayer {background: #800080;}#jindu {background-color: #FF6363;}</style>';
+}
+if(Helper::options()->color && 'black'==Helper::options()->color){
+	echo '<style>#bgmplayer {background: #000000;}#jindu {background-color: #CCC;}</style>';
+}
+     
+   }
 if(Helper::options()->skin && 'red'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: #F1587E;}li.yd-lib:hover, .yd-playing {background: rgba(255, 255, 255, 0.7);border-left: 3px solid #252525;}</style>';
+	echo '<style>#bgmplayer {background: #F1587E;}.yd-playing { border-left: 3px solid #ffffff;}</style>';
 }
 if(Helper::options()->skin && 'purple'==Helper::options()->skin){
 	echo '<style>#bgmplayer {background: #800080;}#jindu {background-color: #FF6363;}</style>';
@@ -71,7 +83,7 @@ if(Helper::options()->skin && 'hei.css'==Helper::options()->skin){
 	echo '<style>#bgmplayer {background: rgba(0, 0, 0, 0.5);}#jindu {background-color: rgba(251, 251, 251, 0.68);}</style>';
 }
 if(Helper::options()->skin && 'bai.css'==Helper::options()->skin || 'white.css'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}#jindu {background-color: rgba(0, 0, 0, 0.32);}</style>';
+	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}#jindu {background-color: rgba(0, 0, 0, 0.32);}.yd-playing {border-left: 3px solid #000000;}</style>';
 }
 if(Helper::options()->skin && 'tea.css'==Helper::options()->skin){
 	echo '<style>#bgmplayer {background: #795548;}</style>';

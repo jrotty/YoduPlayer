@@ -35,8 +35,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
             '');
         $form->addInput($sxj);
         $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, 
-'{title:"Alice",artist:"米白",mp3:"//p2.music.126.net/7_DtDbZXhlm-FWGzplUocg==/18802748347310691.mp3",cover:"//p3.music.126.net/R86tDfWlpXzhJFO1KJgfbQ==/17924238556217288.jpg?param=106x106",},
-{title:"Old Memory",artist:"三輪学",mp3:"//p2.music.126.net/_b_IF6-KM0UHDJwP9u0Bdw==/1394180758436430.mp3",cover:"//p3.music.126.net/OpgpNNPKznDDMxoBqVJy-Q==/2464005557906815.jpg?param=106x106",},
+'{title:"夕颜",artist:"能登麻美子​",mp3:"//m9.music.126.net/20180507203820/7c9cd6d6f260897ac402c5f6838a6e2a/ymusic/f4d8/255b/2b86/e738721dcf5cc0dee99fd51590ea04b4.mp3",cover:"https://static.yecdn.com/jrotty/2015/12/906538968.jpg",},
 ',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
         $form->addInput($musicList);
 

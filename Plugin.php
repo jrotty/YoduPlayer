@@ -35,8 +35,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
             '');
         $form->addInput($sxj);
         $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, 
-'{title:"夕颜",artist:"能登麻美子​",mp3:"//m9.music.126.net/20180507203820/7c9cd6d6f260897ac402c5f6838a6e2a/ymusic/f4d8/255b/2b86/e738721dcf5cc0dee99fd51590ea04b4.mp3",cover:"https://p1.music.126.net/mhmZu-jWa8KlzNlEVSN_AQ==/896101976681770.jpg",},
-',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
+'{title:"Lemon",artist:"米津玄師",mp3:"https://api.imjad.cn/cloudmusic/?type=song&id=536622304&br=128000&raw=ture",cover:"http://p1.music.126.net/r0TgUXBEEmMG48KSsEa_mg==/109951163143657970.jpg?param=130y130",},',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
         $form->addInput($musicList);
 
             $sok = new Typecho_Widget_Helper_Form_Element_Textarea('sok', NULL, 
@@ -121,6 +120,7 @@ if($options->musicList==""){$gqlb='{title:"風の道",artist:"conte-de-fees.com"
 var yaudio = new Audio();
 yaudio.controls = true;
 yaudio.loop = false;
+yaudio.volume = 0.2;
 var musicArr=[
 '.$gqlb.'
               ];';

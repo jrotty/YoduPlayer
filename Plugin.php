@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.1.0
+ * @version 2.2.2
  * @link http://qqdie.com/archives/typecho-yoduplayer.html
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -35,9 +35,19 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
             '');
         $form->addInput($sxj);
         $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, 
-'{title:"Lemon",artist:"米津玄師",mp3:"https://api.imjad.cn/cloudmusic/?type=song&id=536622304&br=128000&raw=ture",cover:"http://p1.music.126.net/r0TgUXBEEmMG48KSsEa_mg==/109951163143657970.jpg?param=130y130",},',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
+'{title:"風の道",artist:"conte-de-fees.com",mp3:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/contedefees_0014.mp3",cover:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg",},
+',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
         $form->addInput($musicList);
 
+       $styleso = array_map('basename', glob(dirname(__FILE__) . '/skin/*.css'));
+ $styleso = array_combine($styleso, $styleso);
+$st = array('mr'=>'不使用皮肤');
+$sk = array_merge($st,$styleso);
+ $skin = new Typecho_Widget_Helper_Form_Element_Select('skin', $sk, 'mr',
+    _t('播放器皮肤'), _t('可自写皮肤扔进skin文件夹即可'));
+    $form->addInput($skin->multiMode());
+      
+      
             $sok = new Typecho_Widget_Helper_Form_Element_Textarea('sok', NULL, 
 '',_t('自定义css'), _t('直接在这里输入css即可对播放器样式进行修改'));
         $form->addInput($sok);
@@ -46,51 +56,21 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
  if(strcasecmp(Helper::options()->theme,'yodu')==0){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/yodu/player.css';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/yodu/player.css?v=2.2.2';
     }else{
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?v=2.2.2';
 }
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
 if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){	
 			echo '<style>@media only screen and (max-width:767px){#bgmplayer{display:none}}</style>'. "\n";
 }
- if(strcasecmp(Helper::options()->theme,'yodu')==0){
-   if(Helper::options()->skin && 'mr'==Helper::options()->skin){
-if(Helper::options()->color && 'red'==Helper::options()->color){
-	echo '<style>#bgmplayer {background: #F1587E;}.yd-playing { border-left: 3px solid #ffffff;}</style>';
-}
-if(Helper::options()->color && 'purple'==Helper::options()->color){
-	echo '<style>#bgmplayer {background: #800080;}#jindu {background-color: #FF6363;}</style>';
-}
-if(Helper::options()->color && 'black'==Helper::options()->color){
-	echo '<style>#bgmplayer {background: #000000;}#jindu {background-color: #CCC;}</style>';
-}
-     
-   }
-if(Helper::options()->skin && 'red'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: #F1587E;}.yd-playing { border-left: 3px solid #ffffff;}</style>';
-}
-if(Helper::options()->skin && 'purple'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: #800080;}#jindu {background-color: #FF6363;}</style>';
-}
-if(Helper::options()->skin && 'black'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: #000000;}#jindu {background-color: #CCC;}</style>';
-}
-if(Helper::options()->skin && 'hei.css'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: rgba(0, 0, 0, 0.5);}#jindu {background-color: rgba(251, 251, 251, 0.68);}</style>';
-}
-if(Helper::options()->skin && 'bai.css'==Helper::options()->skin || 'white.css'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: rgba(255,255,255,0.8);color: black;box-shadow: 0 0 5px #ccc;}#jindu {background-color: rgba(0, 0, 0, 0.32);}.yd-playing {border-left: 3px solid #000000;}</style>';
-}
-if(Helper::options()->skin && 'tea.css'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: #795548;}</style>';
-}
-if(Helper::options()->skin && 'old.css'==Helper::options()->skin){
-	echo '<style>#bgmplayer {background: #888;}</style>';
+
+if(Helper::options()->plugin('YoduPlayer')->skin && 'mr'!=Helper::options()->plugin('YoduPlayer')->skin){
+  echo'<link rel="stylesheet" href="'.Helper::options()->pluginUrl .'/YoduPlayer/skin/'.Helper::options()->plugin('YoduPlayer')->skin.'?v=2.2.2" data-instant-track>';
 }
 
-}
-
+      
+      
     echo '<style>'.Helper::options()->plugin('YoduPlayer')->sok.'</style>';
     }
 
@@ -120,7 +100,7 @@ if($options->musicList==""){$gqlb='{title:"風の道",artist:"conte-de-fees.com"
 var yaudio = new Audio();
 yaudio.controls = true;
 yaudio.loop = false;
-yaudio.volume = 0.2;
+yaudio.volume = 0.18;
 var musicArr=[
 '.$gqlb.'
               ];';
@@ -136,8 +116,8 @@ if(Helper::options()->Plugin('YoduPlayer')->bof=='1'){
 }
 echo '</script>';
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?v=2.2.2" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?v=2.2.2"></script>' . "\n";        
     }
 
 }

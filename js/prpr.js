@@ -39,8 +39,8 @@ document.getElementById("ydfm").className = "";
 ody.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
 }
-
-document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
+if(yaudio.art){yaudio.art='&nbsp;-&nbsp;'+yaudio.art;}
+document.getElementById('ydtitle').innerHTML = yaudio.ti+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;
 var setProgress = function(value){
 		var currentSec = parseInt(value%60) < 10 ? '0' + parseInt(value%60) : parseInt(value%60),

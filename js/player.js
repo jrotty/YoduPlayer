@@ -38,7 +38,8 @@ if (a == musicArr.length - 1) {
         yaudio.play();var autopause=0;
        oyd.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
-document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
+if(yaudio.art){yaudio.art='&nbsp;-&nbsp;'+yaudio.art;}
+document.getElementById('ydtitle').innerHTML = yaudio.ti+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;
 var playlistli=document.querySelectorAll("#playlist li");
 playlistli.forEach((value, index) => {
@@ -61,7 +62,8 @@ if (a == 0) {
         yaudio.play();var autopause=0;
        oyd.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
-document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
+if(yaudio.art){yaudio.art='&nbsp;-&nbsp;'+yaudio.art;}
+document.getElementById('ydtitle').innerHTML = yaudio.ti+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;
 var playlistli=document.querySelectorAll("#playlist li");
 playlistli.forEach((value, index) => {

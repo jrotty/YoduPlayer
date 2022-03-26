@@ -4,8 +4,8 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.2.5
- * @link http://zezeshe.com/archives/typecho-yoduplayer.html
+ * @version 2.2.6
+ * @link http://blog.zezeshe.com/
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
 { 

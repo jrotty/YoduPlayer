@@ -10,8 +10,7 @@ document.getElementById('bgmplayer').onclick=function(){
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Load playlist
+function playlist(){
   var element = document.getElementById('playlist')
 	for (var i = 0; i < musicArr.length; i++){
 		var item = musicArr[i];var anum = i+1;
@@ -29,10 +28,8 @@ playlistli.forEach((value, index) => {
   };
 });
 playlistli[a].classList.add("yd-playing");
-
-
-});
-
+}
+playlist();
 
 var ody=document.getElementById('ydmc');
 if (yaudio.paused) {var autopause=0;

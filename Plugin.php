@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.2.7
+ * @version 2.3.0
  * @link http://blog.zezeshe.com/
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -25,11 +25,6 @@ class YoduPlayer_Plugin implements Typecho_Plugin_Interface
             '随机播放顾名思义，就是页面打开后随机选择列表一首音乐播放');
         $form->addInput($random);
 
-       $bof = new Typecho_Widget_Helper_Form_Element_Radio(
-        'bof', array('0'=> '不自动播放', '1'=> '自动播放'), 0, '播放设置',
-            '自动播放顾名思义，就是页面打开后音乐就会自动播放');
-        $form->addInput($bof);
-
 $d=array();
 $n=0;
 while ($n<=200) {
@@ -47,15 +42,6 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
 '{title:"風の道",artist:"conte-de-fees.com",mp3:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/contedefees_0014.mp3",cover:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg",},
 ',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
         $form->addInput($musicList);
-
-       $styleso = array_map('basename', glob(dirname(__FILE__) . '/skin/*.css'));
- $styleso = array_combine($styleso, $styleso);
-$st = array('mr'=>'不使用皮肤');
-$sk = array_merge($st,$styleso);
- $skin = new Typecho_Widget_Helper_Form_Element_Select('skin', $sk, 'mr',
-    _t('播放器皮肤'), _t('可自写皮肤扔进skin文件夹即可'));
-    $form->addInput($skin->multiMode());
-      
       
             $sok = new Typecho_Widget_Helper_Form_Element_Textarea('sok', NULL, 
 '',_t('自定义css'), _t('直接在这里输入css即可对播放器样式进行修改'));
@@ -64,11 +50,7 @@ $sk = array_merge($st,$styleso);
     
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
- if(strcasecmp(Helper::options()->theme,'yodu')==0){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/yodu/player.css?v=2.2.5';
-    }else{
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?v=2.2.5';
-}
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?2022';
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
 if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){	
 			echo '<style>@media only screen and (max-width:767px){#bgmplayer{display:none}}</style>'. "\n";
@@ -76,12 +58,7 @@ if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){
 if(Helper::options()->Plugin('YoduPlayer')->top){
 			echo '<style>#bgmplayer{top: '.Helper::options()->Plugin('YoduPlayer')->top.'px;}</style>'. "\n";  
 }
-if(Helper::options()->plugin('YoduPlayer')->skin && 'mr'!=Helper::options()->plugin('YoduPlayer')->skin){
-  echo'<link rel="stylesheet" href="'.Helper::options()->pluginUrl .'/YoduPlayer/skin/'.Helper::options()->plugin('YoduPlayer')->skin.'?v=2.2.5" data-instant-track>';
-}
 
-      
-      
     echo '<style>'.Helper::options()->plugin('YoduPlayer')->sok.'</style>';
     }
 
@@ -111,7 +88,7 @@ if($options->musicList==""){$gqlb='{title:"風の道",artist:"conte-de-fees.com"
 var yaudio = new Audio();
 yaudio.controls = true;
 yaudio.loop = false;
-yaudio.volume = 0.18;
+yaudio.volume = 0.68;
 var musicArr=[
 '.$gqlb.'
               ];';
@@ -122,13 +99,10 @@ yaudio.src=sj.mp3;
 yaudio.ti=sj.title;
 yaudio.art=sj.artist;
 yaudio.fm=sj.cover;';
-if(Helper::options()->Plugin('YoduPlayer')->bof=='1'){	
-			echo 'yaudio.play();'. "\n";
-}
 echo '</script>';
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?v=2.2.5" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?v=2.2.5"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?2022" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?2022"></script>' . "\n";        
     }
 
 }

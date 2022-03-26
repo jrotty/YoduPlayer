@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.2.2
+ * @version 2.2.5
  * @link http://zezeshe.com/archives/typecho-yoduplayer.html
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -29,6 +29,15 @@ class YoduPlayer_Plugin implements Typecho_Plugin_Interface
         'bof', array('0'=> '不自动播放', '1'=> '自动播放'), 0, '播放设置',
             '自动播放顾名思义，就是页面打开后音乐就会自动播放');
         $form->addInput($bof);
+
+$d=array();
+$n=0;
+while ($n<=200) {
+$d[$n] = $n.'px';$n=$n+5;
+}
+
+    $set1 = new Typecho_Widget_Helper_Form_Element_Select('top', $d, '65', _t('距离顶部间距'), _t('播放器按钮显示在网页的右上角，这里的设置就是播放器组件距离顶部的间距，默认为65px'));
+    $form->addInput($set1);
 
 $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
         'sxj', array('0'=> '隐藏', '1'=> '不隐藏'), 0, '手机端是/否隐藏',
@@ -56,17 +65,19 @@ $sk = array_merge($st,$styleso);
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
  if(strcasecmp(Helper::options()->theme,'yodu')==0){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/yodu/player.css?v=2.2.2';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/yodu/player.css?v=2.2.5';
     }else{
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?v=2.2.2';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?v=2.2.5';
 }
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
 if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){	
 			echo '<style>@media only screen and (max-width:767px){#bgmplayer{display:none}}</style>'. "\n";
 }
-
+if(Helper::options()->Plugin('YoduPlayer')->top){
+			echo '<style>#bgmplayer{top: '.Helper::options()->Plugin('YoduPlayer')->top.'px;}</style>'. "\n";  
+}
 if(Helper::options()->plugin('YoduPlayer')->skin && 'mr'!=Helper::options()->plugin('YoduPlayer')->skin){
-  echo'<link rel="stylesheet" href="'.Helper::options()->pluginUrl .'/YoduPlayer/skin/'.Helper::options()->plugin('YoduPlayer')->skin.'?v=2.2.2" data-instant-track>';
+  echo'<link rel="stylesheet" href="'.Helper::options()->pluginUrl .'/YoduPlayer/skin/'.Helper::options()->plugin('YoduPlayer')->skin.'?v=2.2.5" data-instant-track>';
 }
 
       
@@ -83,7 +94,7 @@ if($options->musicList==""){$gqlb='{title:"風の道",artist:"conte-de-fees.com"
 <i id="ydmusic" class="icon-music"></i>
 </span>
 <div id="bgmpanel">
-<div class="bgmfm"><img id="ydfm" src="" onerror=\'javascript:this.src="'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg";this.onerror=null;\'></div>
+<div class="bgmfm" onclick="playbtu();"><img id="ydfm" src="" onerror=\'javascript:this.src="'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg";this.onerror=null;\'></div>
 <div class="bgmtitle"><span id="ydtitle"></span></div>
 <div class="bgmtime"><span id="ytime">0:00</span></div>
 <div class="bgmbtn">
@@ -116,8 +127,8 @@ if(Helper::options()->Plugin('YoduPlayer')->bof=='1'){
 }
 echo '</script>';
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?v=2.2.2" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?v=2.2.2"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?v=2.2.5" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?v=2.2.5"></script>' . "\n";        
     }
 
 }

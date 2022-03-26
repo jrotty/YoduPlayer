@@ -1,9 +1,11 @@
 function liebiao(){
-  $("ol#playlist").toggle();
+var el = document.querySelector("#playlist");
+  if(el.style.display==='none') {el.style.display='block';}else{el.style.display='none';}
+
 }
 function qiehuan(){
-$("ol#playlist").hide();
-$("#bgmplayer").toggleClass("bgmon");
+document.getElementById('playlist').style.display='none';
+document.getElementById('bgmplayer').classList.toggle("bgmon");
 }
 function playbtu(){
 var oyd = document.getElementById('ydmc');
@@ -15,7 +17,11 @@ document.getElementById("ydfm").className = "Rotation";
             yaudio.pause();
             oyd.className = 'icon-bofang';document.getElementById("ydfm").className = "";
         }
-  $('#playlist li').removeClass('yd-playing').eq(a).addClass('yd-playing');
+var playlistli=document.querySelectorAll("#playlist li");
+playlistli.forEach((value, index) => {
+    playlistli[index].classList.remove("yd-playing");
+});
+playlistli[a].classList.add("yd-playing");
 }
 function next(b) {
 var oyd=document.getElementById('ydmc');if(b === undefined){
@@ -33,7 +39,12 @@ if (a == musicArr.length - 1) {
        oyd.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
 document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
-document.getElementById("ydfm").src=yaudio.fm;$('#playlist li').removeClass('yd-playing').eq(a).addClass('yd-playing');
+document.getElementById("ydfm").src=yaudio.fm;
+var playlistli=document.querySelectorAll("#playlist li");
+playlistli.forEach((value, index) => {
+    playlistli[index].classList.remove("yd-playing");
+});
+playlistli[a].classList.add("yd-playing");
 }
 function previous(){
 var oyd=document.getElementById('ydmc');
@@ -51,7 +62,12 @@ if (a == 0) {
        oyd.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
 document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
-document.getElementById("ydfm").src=yaudio.fm;$('#playlist li').removeClass('yd-playing').eq(a).addClass('yd-playing');
+document.getElementById("ydfm").src=yaudio.fm;
+var playlistli=document.querySelectorAll("#playlist li");
+playlistli.forEach((value, index) => {
+    playlistli[index].classList.remove("yd-playing");
+});
+playlistli[a].classList.add("yd-playing");
 }
 
 
@@ -60,10 +76,7 @@ var oyd=document.getElementById('ydmc');
 var b=a;
   next(b);
   }
-
-
+yaudio.addEventListener("error" ,function() {next();},false);
 yaudio.addEventListener('ended',
-function() {
-    next();
-},
+function() {next();},
 false);

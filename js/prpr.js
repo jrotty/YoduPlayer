@@ -1,28 +1,36 @@
-$(document).click(function(){
+document.body.onclick=function(){ 
 // 点击播放器外面的事物时关闭抽屉
-  $("ol#playlist").hide();
-$("#bgmplayer").removeClass("bgmon");
-});
-$("#bgmplayer").click(function(event){
+
+document.getElementById('playlist').style.display='none';
+document.getElementById('bgmplayer').classList.remove("bgmon");
+};
+document.getElementById('bgmplayer').onclick=function(){ 
     event.stopPropagation();
-});
+};
 
 
 
-$(document).ready(function(){
+document.addEventListener("DOMContentLoaded", () => {
   // Load playlist
+  var element = document.getElementById('playlist')
 	for (var i = 0; i < musicArr.length; i++){
 		var item = musicArr[i];var anum = i+1;
       if(anum<10){anum='0'+anum;}
-		$('#playlist').append('<li class="yd-lib"><span class="anum">'+anum+'.</span><strong style="margin-left: 5px;">'+item.title+'</strong><span style="float: right;" class="artist">'+item.artist+'</span></li>');
+   element.insertAdjacentHTML('beforeend','<li class="yd-lib"><span class="anum">'+anum+'.</span><strong style="margin-left: 5px;">'+item.title+'</strong><span style="float: right;" class="artist">'+item.artist+'</span></li>');
 		if (item.mp3 == "") {
-			$('#playlist li').eq(i).css('color', '#ddd');
+			document.querySelectorAll("#playlist li")[i].style.color='#ddd';
 		}
 	}
-$('#playlist li').removeClass('yd-playing').eq(a).addClass('yd-playing');
-$('#playlist li').click(function(){var a= $(this).index();  
- dianbo(a);
-  });
+var playlistli=document.querySelectorAll("#playlist li");
+playlistli.forEach((value, index) => {
+    playlistli[index].classList.remove("yd-playing");
+    playlistli[index].onclick=function(){ 
+ dianbo(index);
+  };
+});
+playlistli[a].classList.add("yd-playing");
+
+
 });
 
 

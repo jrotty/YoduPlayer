@@ -6,7 +6,9 @@
 > 3，无 JQ，要求浏览器 ie9+。（大概）
 
 网易云歌单配置在线生成器：https://logi.im/yoduplayer.html （不保证一直有效，需要长久使用建议访问下方链接获取源码自行搭建）
+
 源码及作者链接：https://logi.im/blog/introduction-to-major-music-plugins-for-typecho.html
+
 感谢 @LOGI 网友提供
 
 

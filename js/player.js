@@ -24,7 +24,9 @@ playlistli.forEach((value, index) => {
 playlistli[a].classList.add("yd-playing");
 }
 function next(b) {
-var oyd=document.getElementById('ydmc');if(b === undefined){
+var oyd=document.getElementById('ydmc');
+document.getElementById('jindu').style.width='0%';
+if(b === undefined){
 if (a == musicArr.length - 1) {
             a = 0;
         } else {

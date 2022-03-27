@@ -4,8 +4,8 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.3.0
- * @link http://blog.zezeshe.com/
+ * @version 2.3.1
+ * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
 { 
@@ -102,7 +102,7 @@ yaudio.fm=sj.cover;';
 echo '</script>';
 
         echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?2022" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?2022"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?202203"></script>' . "\n";        
     }
 
 }

@@ -7,15 +7,17 @@ function qiehuan(){
 document.getElementById('playlist').style.display='none';
 document.getElementById('bgmplayer').classList.toggle("bgmon");
 }
+//播放/暂停按钮
 function playbtu(){
 var oyd = document.getElementById('ydmc');
 if (yaudio.paused) {
             yaudio.play();
            oyd.className = 'icon-music';
-document.getElementById("ydfm").className = "Rotation";
+document.getElementById("ydfm").classList.remove("paused");
         } else {
             yaudio.pause();
-            oyd.className = 'icon-bofang';document.getElementById("ydfm").className = "";
+            oyd.className = 'icon-bofang';
+document.getElementById("ydfm").classList.add("paused");
         }
 var playlistli=document.querySelectorAll("#playlist li");
 playlistli.forEach((value, index) => {
@@ -23,6 +25,8 @@ playlistli.forEach((value, index) => {
 });
 playlistli[a].classList.add("yd-playing");
 }
+
+//下一首
 function next(b) {
 var oyd=document.getElementById('ydmc');
 document.getElementById('jindu').style.width='0%';
@@ -39,7 +43,6 @@ if (a == musicArr.length - 1) {
 		yaudio.fm=sj.cover;
         yaudio.play();var autopause=0;
        oyd.className = 'icon-music';
-document.getElementById("ydfm").className = "Rotation";
 if(yaudio.art){yaudio.art='&nbsp;-&nbsp;'+yaudio.art;}
 document.getElementById('ydtitle').innerHTML = yaudio.ti+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;
@@ -48,7 +51,10 @@ playlistli.forEach((value, index) => {
     playlistli[index].classList.remove("yd-playing");
 });
 playlistli[a].classList.add("yd-playing");
+document.getElementById("ydfm").classList.remove("paused");
 }
+
+//上一首
 function previous(){
 var oyd=document.getElementById('ydmc');
 if (a == 0) {
@@ -63,7 +69,6 @@ if (a == 0) {
 		yaudio.fm=sj.cover;
         yaudio.play();var autopause=0;
        oyd.className = 'icon-music';
-document.getElementById("ydfm").className = "Rotation";
 if(yaudio.art){yaudio.art='&nbsp;-&nbsp;'+yaudio.art;}
 document.getElementById('ydtitle').innerHTML = yaudio.ti+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;
@@ -72,6 +77,7 @@ playlistli.forEach((value, index) => {
     playlistli[index].classList.remove("yd-playing");
 });
 playlistli[a].classList.add("yd-playing");
+document.getElementById("ydfm").classList.remove("paused");
 }
 
 

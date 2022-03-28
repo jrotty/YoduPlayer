@@ -126,7 +126,8 @@ span.bgmbuttom{    cursor: pointer;
 from {-webkit-transform: rotate(0deg);}
 to {-webkit-transform: rotate(360deg);}
 }
-.bgmfm .Rotation{    border: 2px solid #FFF;
+.bgmfm .Rotation{
+    border: 2px solid #FFF;
     box-shadow: 0 0 5px #ccc;
 -webkit-transform: rotate(360deg);
 animation: rotation 9.8s linear infinite;
@@ -134,18 +135,34 @@ animation: rotation 9.8s linear infinite;
 -webkit-animation: rotation 9.8s linear infinite;
 -o-animation: rotation 9.8s linear infinite;
 }
-.yd-lib{    cursor: pointer; overflow: hidden;    padding-left:5px;    padding-right: 3px;}
-ol#playlist { border-top: 1px solid rgba(138, 138, 138, 0.21);   margin:0 0 8px 0;
-    display: none;       width: 240px;
-max-height: 130px;padding-left: 0px;
+.bgmfm .Rotation.paused{animation-play-state:paused;}
+#playlist { 
+    border-top: 1px solid rgba(138, 138, 138, 0.21);
+    margin:0 0 8px 0;
+    display: none;
+    width: 240px;
+    max-height: 130px;
+    padding-left: 0px;
     overflow-y: auto;
+}
+
+.yd-lib{
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    padding-left:5px;    
+    padding-right: 3px;
+    word-break: break-all;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 .yd-playing {
     border-left: 3px solid #000000;
 }
 li.yd-lib:hover{
-background-color: #fff;
-    color: black;
+    background-color: #000000;
+    color: white;
 }
 .dark #bgmplayer {background: rgba(0, 0, 0, 0.5);color: white;
     box-shadow: 0 0 6px 1px rgb(100,100,100);
@@ -153,3 +170,7 @@ background-color: #fff;
     -moz-box-shadow: 0 0 6px 1px rgba(100,100,100,1);}
 .dark #jindu {background-color: rgba(251, 251, 251, 0.68);}
 .dark .yd-playing{border-left: 3px solid #ff0000;}
+.dark li.yd-lib:hover{
+background-color: #fff;
+color: black;
+}

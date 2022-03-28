@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.3.1
+ * @version 2.3.3
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -38,9 +38,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
         'sxj', array('0'=> '隐藏', '1'=> '不隐藏'), 0, '手机端是/否隐藏',
             '');
         $form->addInput($sxj);
-        $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, 
-'{title:"風の道",artist:"conte-de-fees.com",mp3:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/contedefees_0014.mp3",cover:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg",},
-',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
+        $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, NULL,_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
         $form->addInput($musicList);
       
             $sok = new Typecho_Widget_Helper_Form_Element_Textarea('sok', NULL, 
@@ -50,28 +48,29 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
     
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?2022';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?2022328';
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
-if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){	
-			echo '<style>@media only screen and (max-width:767px){#bgmplayer{display:none}}</style>'. "\n";
-}
+        $css="";
 if(Helper::options()->Plugin('YoduPlayer')->top){
-			echo '<style>#bgmplayer{top: '.Helper::options()->Plugin('YoduPlayer')->top.'px;}</style>'. "\n";  
+		$css.='#bgmplayer{top: '.Helper::options()->Plugin('YoduPlayer')->top.'px;}';  
 }
-
-    echo '<style>'.Helper::options()->plugin('YoduPlayer')->sok.'</style>';
+if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){	
+		$css.='@media only screen and (max-width:767px){#bgmplayer{display:none}}';
+}
+    echo '<style>'.$css.Helper::options()->plugin('YoduPlayer')->sok.'</style>';
     }
 
     public static function footer(){
         $options = Helper::options()->plugin('YoduPlayer'); 
-if($options->musicList==""){$gqlb='{title:"風の道",artist:"conte-de-fees.com",mp3:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/contedefees_0014.mp3",cover:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg",},';}else{$gqlb=$options->musicList;}
+if($options->musicList==""){
+    $gqlb='{title:"未设置歌曲",artist:"",mp3:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/huaq.mp3",cover:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/moren.jpg",},';}else{$gqlb=$options->musicList;}
 		echo '
 <div id="bgmplayer" class="bgmplayer">
 <span class="bgmbuttom"  onClick="qiehuan();" >
 <i id="ydmusic" class="icon-music"></i>
 </span>
 <div id="bgmpanel">
-<div class="bgmfm" onclick="playbtu();"><img id="ydfm" src="" onerror=\'javascript:this.src="'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg";this.onerror=null;\'></div>
+<div class="bgmfm" onclick="playbtu();"><img id="ydfm" class="Rotation paused" src="" onerror=\'javascript:this.src="'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg";this.onerror=null;\'></div>
 <div class="bgmtitle"><span id="ydtitle"></span></div>
 <div class="bgmtime"><span id="ytime">0:00</span></div>
 <div class="bgmbtn">
@@ -81,7 +80,7 @@ if($options->musicList==""){$gqlb='{title:"風の道",artist:"conte-de-fees.com"
 <span onclick="liebiao();"><i class="icon-list"></i></span>
 </div>
 </div><div id="jindu"></div>
-		<ol id="playlist"></ol></div>
+		<ul id="playlist"></ul></div>
              ';
 
         echo '<script data-no-instant>
@@ -101,8 +100,8 @@ yaudio.art=sj.artist;
 yaudio.fm=sj.cover;';
 echo '</script>';
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?2022" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?202203"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?2022328" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?2022328"></script>' . "\n";        
     }
 
 }

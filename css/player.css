@@ -149,13 +149,16 @@ animation: rotation 9.8s linear infinite;
 .yd-lib{
     border-left: 3px solid transparent;
     cursor: pointer;
-    padding-left:5px;    
-    padding-right: 3px;
+    padding: 1px 3px;
+    border-bottom: 1px dashed #c2c2c2;
     word-break: break-all;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+}
+#playlist .yd-lib:last-child{
+  border-bottom:none;  
 }
 .yd-playing {
     border-left: 3px solid #000000;

@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.3.3
+ * @version 2.3.4
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -38,7 +38,8 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
         'sxj', array('0'=> '隐藏', '1'=> '不隐藏'), 0, '手机端是/否隐藏',
             '');
         $form->addInput($sxj);
-        $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, NULL,_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
+        $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, NULL,_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！')); 
+        $musicList->addRule('maxLength', _t('歌曲太多建议减少歌曲数量'), 60000);
         $form->addInput($musicList);
       
             $sok = new Typecho_Widget_Helper_Form_Element_Textarea('sok', NULL, 
@@ -100,8 +101,8 @@ yaudio.art=sj.artist;
 yaudio.fm=sj.cover;';
 echo '</script>';
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?2022328" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?2022328"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?20220328" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?20220328"></script>' . "\n";        
     }
 
 }

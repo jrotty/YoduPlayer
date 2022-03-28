@@ -29,6 +29,7 @@ playlistli[a].classList.add("yd-playing");
 //下一首
 function next(b) {
 var oyd=document.getElementById('ydmc');
+var geshou= '';
 document.getElementById('jindu').style.width='0%';
 if(b === undefined){
 if (a == musicArr.length - 1) {
@@ -43,8 +44,8 @@ if (a == musicArr.length - 1) {
 		yaudio.fm=sj.cover;
         yaudio.play();var autopause=0;
        oyd.className = 'icon-music';
-if(yaudio.art){yaudio.art='&nbsp;-&nbsp;'+yaudio.art;}
-document.getElementById('ydtitle').innerHTML = yaudio.ti+yaudio.art;
+if(yaudio.art.length>0){geshou='&nbsp;-&nbsp;'+yaudio.art;}
+document.getElementById('ydtitle').innerHTML = yaudio.ti+geshou;
 document.getElementById("ydfm").src=yaudio.fm;
 var playlistli=document.querySelectorAll("#playlist li");
 playlistli.forEach((value, index) => {
@@ -57,6 +58,7 @@ document.getElementById("ydfm").classList.remove("paused");
 //上一首
 function previous(){
 var oyd=document.getElementById('ydmc');
+var geshou= '';
 if (a == 0) {
           a =musicArr.length - 1;
         }else{
@@ -69,8 +71,8 @@ if (a == 0) {
 		yaudio.fm=sj.cover;
         yaudio.play();var autopause=0;
        oyd.className = 'icon-music';
-if(yaudio.art){yaudio.art='&nbsp;-&nbsp;'+yaudio.art;}
-document.getElementById('ydtitle').innerHTML = yaudio.ti+yaudio.art;
+if(yaudio.art.length>0){geshou='&nbsp;-&nbsp;'+yaudio.art;}
+document.getElementById('ydtitle').innerHTML = yaudio.ti+geshou;
 document.getElementById("ydfm").src=yaudio.fm;
 var playlistli=document.querySelectorAll("#playlist li");
 playlistli.forEach((value, index) => {

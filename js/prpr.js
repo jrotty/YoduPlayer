@@ -56,7 +56,7 @@ document.getElementById('ytime').innerHTML = (parseInt(value/60)+':'+currentSec)
 		setProgress(yaudio.currentTime);
 	}
 
-timeout = setInterval(updateProgress, 500);
+timeout = setInterval(updateProgress, 300);
 }
 
 playlist();

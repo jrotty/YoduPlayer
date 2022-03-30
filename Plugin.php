@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.3.5
+ * @version 2.3.6
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -49,7 +49,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
     
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?20220328';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?20220331';
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
         $css="";
 if(Helper::options()->Plugin('YoduPlayer')->top){
@@ -68,17 +68,17 @@ if($options->musicList==""){
 		echo '
 <div id="bgmplayer" class="bgmplayer">
 <span class="bgmbuttom"  onClick="qiehuan();" >
-<i id="ydmusic" class="icon-music"></i>
+<svg viewBox="0 0 20 20" fill="currentColor" id="music-note" class="ydicon"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"></path></svg>
 </span>
 <div id="bgmpanel">
 <div class="bgmfm" onclick="playbtu();"><img id="ydfm" class="Rotation paused" src="" onerror=\'javascript:this.src="'.Helper::options()->pluginUrl . '/YoduPlayer/images/0014.jpg";this.onerror=null;\'></div>
 <div class="bgmtitle"><span id="ydtitle"></span></div>
 <div class="bgmtime"><span id="ytime">0:00</span></div>
 <div class="bgmbtn">
-<span onClick="previous();"><i class="icon-zuo"></i></span>
-<span onclick="playbtu();"><i id="ydmc"></i></span>
-<span onclick="next();"><i class="icon-you"></i></span>
-<span onclick="liebiao();"><i class="icon-list"></i></span>
+<span onClick="previous();"><svg viewBox="0 0 20 20" fill="currentColor" class="ydicon"><path d="M8.445 14.832A1 1 0 0010 14v-2.798l5.445 3.63A1 1 0 0017 14V6a1 1 0 00-1.555-.832L10 8.798V6a1 1 0 00-1.555-.832l-6 4a1 1 0 000 1.664l6 4z"></path></svg></span>
+<span onclick="playbtu();" id="ydmc"></span>
+<span onclick="next();"><svg viewBox="0 0 20 20" fill="currentColor" class="ydicon"><path d="M4.555 5.168A1 1 0 003 6v8a1 1 0 001.555.832L10 11.202V14a1 1 0 001.555.832l6-4a1 1 0 000-1.664l-6-4A1 1 0 0010 6v2.798l-5.445-3.63z"></path></svg></span>
+<span onclick="liebiao();"><svg viewBox="0 0 20 20" fill="currentColor" class="ydicon"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg></span>
 </div>
 </div><div id="jindu"></div>
 		<ul id="playlist"></ul></div>
@@ -101,8 +101,8 @@ yaudio.art=sj.artist;
 yaudio.fm=sj.cover;';
 echo '</script>';
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?20220328" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?20220328"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?20220331" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?20220331"></script>' . "\n";        
     }
 
 }

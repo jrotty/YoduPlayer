@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.3.6
+ * @version 2.3.7
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -17,19 +17,13 @@ class YoduPlayer_Plugin implements Typecho_Plugin_Interface
 	/* 禁用插件方法 */
 	public static function deactivate(){}
     public static function config(Typecho_Widget_Helper_Form $form){
-       if(strcasecmp(Helper::options()->theme,'yodu')==0){
-           echo '检测到您使用的是<b>'.Helper::options()->theme.'</b>模板，已为您启动定制策略！';
-       }
  $random = new Typecho_Widget_Helper_Form_Element_Radio(
             'random', array('0' => '不随机播放', '1' => '随机播放'), 0, '随机播放设置',
             '随机播放顾名思义，就是页面打开后随机选择列表一首音乐播放');
         $form->addInput($random);
 
-$d=array();
-$n=0;
-while ($n<=200) {
-$d[$n] = $n.'px';$n=$n+5;
-}
+$d=array();$n=0;
+while ($n<=200) {$d[$n] = $n.'px';$n=$n+5;}
 
     $set1 = new Typecho_Widget_Helper_Form_Element_Select('top', $d, '65', _t('距离顶部间距'), _t('播放器按钮显示在网页的右上角，这里的设置就是播放器组件距离顶部的间距，默认为65px'));
     $form->addInput($set1);
@@ -101,8 +95,8 @@ yaudio.art=sj.artist;
 yaudio.fm=sj.cover;';
 echo '</script>';
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?20220331" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?20220331"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?2022331" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?2022331"></script>' . "\n";        
     }
 
 }

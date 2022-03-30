@@ -7,7 +7,8 @@ document.getElementById('bgmplayer').onclick=function(){ //避免事件被覆盖
 };
 
 function playlist(){//歌曲列表具现化
-  var element = document.getElementById('playlist')
+  var element = document.getElementById('playlist');
+  element.innerHTML='';
 	for (var i = 0; i < musicArr.length; i++){
 		var item = musicArr[i];var anum = i+1;
       if(anum<10){anum='0'+anum;}
@@ -15,7 +16,7 @@ function playlist(){//歌曲列表具现化
       if(item.artist){
           geshou= '&nbsp;-&nbsp;<span class="artist">'+item.artist+'</span>';
       }
-   element.insertAdjacentHTML('beforeend','<li class="yd-lib"><span class="anum">'+anum+'.</span><strong style="margin-left:3px;">'+item.title+'</strong>'+geshou+'</li>');
+   element.innerHTML=element.innerHTML+'<li class="yd-lib"><span class="anum">'+anum+'.</span><strong style="margin-left:3px;">'+item.title+'</strong>'+geshou+'</li>';
 		if (item.mp3 == "") {
 			document.querySelectorAll("#playlist li")[i].style.color='#ddd';
 		}

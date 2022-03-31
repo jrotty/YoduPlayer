@@ -1,10 +1,8 @@
 function liebiao(){
-var el = document.querySelector("#playlist");
-  if(el.style.display==='none') {el.style.display='block';}else{el.style.display='none';}
-
+document.querySelector("#playlist").classList.toggle("yhidden");
 }
 function qiehuan(){
-document.getElementById('playlist').style.display='none';
+document.querySelector("#playlist").classList.add("yhidden");
 document.getElementById('bgmplayer').classList.toggle("bgmon");
 }
 //播放/暂停按钮

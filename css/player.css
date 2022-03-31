@@ -102,15 +102,25 @@ animation: rotation 9.8s linear infinite;
 #playlist { 
     border-top: 1px solid rgba(138, 138, 138, 0.21);
     margin:0 0 8px 0;
-    display: none;
     width: 240px;
     max-height: 130px;
     padding-left: 0px;
+    font-size: 13px;
     overflow-y: auto;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4,0,0.2,1);
+    transition-duration: 300ms;
+    scrollbar-color: #718096 #cbd5e0;
+    scrollbar-width: thin;
 }
-
+#playlist.yhidden{
+    max-height:0;
+    margin: 0;
+    overflow-y: hidden;
+}
 .yd-lib{
     border-left: 3px solid transparent;
+    line-height: 2;
     cursor: pointer;
     padding: 1px 3px;
     border-bottom: 1px dashed #c2c2c2;

@@ -1,5 +1,5 @@
 document.body.onclick=function(){ //点击播放器外面的事物时关闭抽屉
-document.getElementById('playlist').style.display='none';
+document.querySelector("#playlist").classList.add("yhidden");
 document.getElementById('bgmplayer').classList.remove("bgmon");
 };
 document.getElementById('bgmplayer').onclick=function(){ //避免事件被覆盖

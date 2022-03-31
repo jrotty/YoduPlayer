@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.3.7
+ * @version 2.3.8
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -43,7 +43,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
     
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?20220331';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?238';
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
         $css="";
 if(Helper::options()->Plugin('YoduPlayer')->top){
@@ -75,7 +75,7 @@ if($options->musicList==""){
 <span onclick="liebiao();"><svg viewBox="0 0 20 20" fill="currentColor" class="ydicon"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg></span>
 </div>
 </div><div id="jindu"></div>
-		<ul id="playlist"></ul></div>
+		<ul id="playlist" class="yhidden"></ul></div>
              ';
 
         echo '<script data-no-instant>
@@ -95,8 +95,8 @@ yaudio.art=sj.artist;
 yaudio.fm=sj.cover;';
 echo '</script>';
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?2022331" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?2022331"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?238" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?238"></script>' . "\n";        
     }
 
 }

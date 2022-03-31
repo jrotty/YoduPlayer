@@ -25,7 +25,7 @@ var playlistli=document.querySelectorAll("#playlist li");
 playlistli.forEach((value, index) => {
     playlistli[index].classList.remove("yd-playing");
     playlistli[index].onclick=function(){ 
- dianbo(index);
+ next(index);//使用next函数进行点播
   };
 });
 playlistli[a].classList.add("yd-playing");

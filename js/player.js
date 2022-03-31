@@ -57,9 +57,6 @@ a =musicArr.length - 1;
 }
 next(a);//使用next函数进行点播
 }
-
-
-function dianbo(a){next(a);}//使用next函数进行点播
   
 yaudio.addEventListener("error" ,function() {next();},false);
 yaudio.addEventListener('ended',function() {next();},false);

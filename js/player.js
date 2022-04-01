@@ -4,6 +4,7 @@ document.querySelector("#playlist").classList.toggle("yhidden");
 function qiehuan(){
 document.querySelector("#playlist").classList.add("yhidden");
 document.getElementById('bgmplayer').classList.toggle("bgmon");
+document.querySelector("#playlist").scrollTop = document.querySelector(".yd-playing").offsetTop - document.querySelector(".yd-lib").offsetTop;
 }
 //播放/暂停按钮
 function playbtu(){
@@ -53,10 +54,9 @@ function previous(){
 if (a == 0) {//如果当前歌曲是第一首则跳转至最后一首
 a =musicArr.length - 1;
 }else{//否则跳转至上一首
- a = a-1;
+a = a-1;
 }
 next(a);//使用next函数进行点播
 }
-  
 yaudio.addEventListener("error" ,function() {next();},false);
 yaudio.addEventListener('ended',function() {next();},false);

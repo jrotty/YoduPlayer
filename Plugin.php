@@ -4,18 +4,21 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.3.8
+ * @version 2.4.6
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
 { 
  public static function activate()
 	{
-        Typecho_Plugin::factory('Widget_Archive')->header = array('YoduPlayer_Plugin', 'header');
-        Typecho_Plugin::factory('Widget_Archive')->footer = array('YoduPlayer_Plugin', 'footer');
+    Typecho_Plugin::factory('Widget_Archive')->header = array(__CLASS__, 'header');
+    Typecho_Plugin::factory('Widget_Archive')->footer = array(__CLASS__, 'footer');
+    Helper::addRoute("yoduapi","/yoduapi","YoduPlayer_Action",'action');
     }
 	/* 禁用插件方法 */
-	public static function deactivate(){}
+	public static function deactivate(){
+     Helper::removeRoute("yoduapi");
+	}
     public static function config(Typecho_Widget_Helper_Form $form){
  $random = new Typecho_Widget_Helper_Form_Element_Radio(
             'random', array('0' => '不随机播放', '1' => '随机播放'), 0, '随机播放设置',
@@ -39,11 +42,29 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
             $sok = new Typecho_Widget_Helper_Form_Element_Textarea('sok', NULL, 
 '',_t('自定义css'), _t('直接在这里输入css即可对播放器样式进行修改'));
         $form->addInput($sok);
+        
+         $getype = new Typecho_Widget_Helper_Form_Element_Radio(
+            'getype', array('netease' => '网易云音乐(默认)', 'tencent' => 'QQ音乐'), 'netease', '歌曲源',
+            '选择好后请在下方填写对应平台的歌单id即可');
+        $form->addInput($getype);
+        
+        $gedan = new Typecho_Widget_Helper_Form_Element_Text('gedan', NULL, 
+'',_t('请输入歌单id'), _t('填写该项后，播放器将使用这里的歌曲忽略上方的歌曲列表设置'));
+        $form->addInput($gedan);
+        
+        $t = new Typecho_Widget_Helper_Form_Element_Text(
+            'auth',
+            null,
+            Typecho_Common::randString(32),
+            _t('* 接口保护'),
+            _t('加盐保护 API 接口不被滥用，自动生成无需设置。')
+        );
+        $form->addInput($t);
     }
     
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?238';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?239';
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
         $css="";
 if(Helper::options()->Plugin('YoduPlayer')->top){
@@ -57,7 +78,7 @@ if(Helper::options()->Plugin('YoduPlayer')->sxj=='0'){
 
     public static function footer(){
         $options = Helper::options()->plugin('YoduPlayer'); 
-if($options->musicList==""){
+if(empty($options->musicList)){
     $gqlb='{title:"未设置歌曲",artist:"",mp3:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/huaq.mp3",cover:"'.Helper::options()->pluginUrl . '/YoduPlayer/images/moren.jpg",},';}else{$gqlb=$options->musicList;}
 		echo '
 <div id="bgmplayer" class="bgmplayer">
@@ -77,7 +98,7 @@ if($options->musicList==""){
 </div><div id="jindu"></div>
 		<ul id="playlist" class="yhidden"></ul></div>
              ';
-
+if(empty($options->gedan)){
         echo '<script data-no-instant>
 var yaudio = new Audio();
 yaudio.controls = true;
@@ -92,11 +113,29 @@ echo 'var sj=musicArr[a];
 yaudio.src=sj.mp3;
 yaudio.ti=sj.title;
 yaudio.art=sj.artist;
-yaudio.fm=sj.cover;';
+yaudio.fm=sj.cover;
+var musicApi=[];';
 echo '</script>';
+}else{
+$rewrite='';if(Helper::options()->rewrite==0){$rewrite='index.php/';}
+$apiurl=Helper::options()->rootUrl.'/'.$rewrite.'yoduapi';
+    ?>
+  <script data-no-instant>
+var yaudio = new Audio();
+yaudio.controls = true;
+yaudio.loop = false;
+yaudio.volume = 0.68; 
+var sj="";var a=0;
+var musicArr=[];
+var musicApi=[
+    {api:"<?php echo $apiurl;?>",type:"<?php echo $options->getype; ?>",id:"<?php echo $options->gedan; ?>",sj:"<?php echo $options->random; ?>",auth:"<?php echo $options->auth; ?>"},
+    ];
+</script>   
+    <?php
+}
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?238" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?238"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?246" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?246"></script>' . "\n";        
     }
 
 }

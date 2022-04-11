@@ -8,14 +8,6 @@
 
 > 3，无 JQ，要求使用现代浏览器。
 
-网易云歌单配置在线生成器：https://logi.im/yoduplayer.html （不保证一直有效，需要长久使用建议访问下方链接获取源码自行搭建）
-
-源码及作者链接：https://logi.im/blog/introduction-to-major-music-plugins-for-typecho.html
-
-感谢 @LOGI 网友提供
-
-**注意事项：** 由于歌曲信息是存在数据库的而数据库类型为`text`，所以歌曲信息的长度是有限制的，所以建议歌曲数量不易超过200首，如果无心触发这个问题首页和插件设置页将报错此时禁用插件重新启动即可。
-
 ### 使用方法
 
 下载压缩包, 解压，得到名为YoduPlayer的文件夹，如果不是请将文件夹重命名为YoduPlayer，之后上传到你博客中的 /usr/plugins 目录，在后台启用即可
@@ -24,13 +16,25 @@
 ```
 {title:"xxx", artist:"xxx", cover:"http:xxxx", mp3:"http:xxxx",cover:"图片地址",} ，每个歌曲之间用英文,隔开。
 ```
-**请保证歌曲列表里至少有一首歌**！
+**注意事项：** 由于歌曲信息是存在数据库的而数据库类型为`text`，所以歌曲信息的长度是有限制的，所以建议歌曲数量不易超过200首，如果无心触发这个问题首页和插件设置页将报错此时禁用插件重新启动即可。
+
 ### 夜间模式自适应
 适配夜间模式需要博客启动夜间模式时给`html`或者`body`加`class="dark"`
+
+### 网易云/QQ音乐歌单
+得益于[meting-api](https://github.com/injahow/meting-api)，插件自2.4.5版本开始支持填写网易云或QQ音乐歌单id来调用歌曲。
+
+### Thanks
+
+- [Meting](https://github.com/metowolf/Meting)
+- [meting-api](https://github.com/injahow/meting-api)
+
 
 > 项目起始于2017年，2018年05月28日停止维护，后于2022年重新开始维护
 
 ### 更新历史
+
+> 20220411内置网易云与qq音乐歌单api
 
 > 20220331使用svg替换默认的字体图标，简化js，删除残余php代码，修复某些情况返回时歌曲列表重复生成问题，加入歌曲列表展开动画，歌曲列表字体大小调整，火狐滚动条样式适配。
 

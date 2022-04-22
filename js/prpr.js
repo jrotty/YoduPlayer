@@ -21,6 +21,7 @@ yaudio.src=sj.mp3;
 yaudio.ti=sj.title;
 yaudio.art=sj.artist;
 yaudio.fm=sj.cover;
+yaudio.pause();
 }
 	for (var i = 0; i < musicArr.length; i++){
 		var item = musicArr[i];var anum = i+1;

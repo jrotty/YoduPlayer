@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.4.7
+ * @version 2.5.0
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -100,8 +100,7 @@ if(empty($options->musicList)){
              ';
 if(empty($options->gedan)){
         echo '<script data-no-instant>
-var yaudio = new Audio();
-yaudio.controls = true;
+const yaudio = new Audio();
 yaudio.loop = false;
 yaudio.volume = 0.68;
 var musicArr=[
@@ -114,18 +113,19 @@ yaudio.src=sj.mp3;
 yaudio.ti=sj.title;
 yaudio.art=sj.artist;
 yaudio.fm=sj.cover;
-var musicApi=[];yaudio.pause();';
+var autopause=0;
+var musicApi=[];';
 echo '</script>';
 }else{
 $rewrite='';if(Helper::options()->rewrite==0){$rewrite='index.php/';}
 $apiurl=Helper::options()->rootUrl.'/'.$rewrite.'yoduapi';
     ?>
   <script data-no-instant>
-var yaudio = new Audio();
-yaudio.controls = true;
+const yaudio = new Audio();
 yaudio.loop = false;
 yaudio.volume = 0.68; 
 var sj="";var a=0;
+var autopause=0;
 var musicArr=[];
 var musicApi=[
     {api:"<?php echo $apiurl;?>",type:"<?php echo $options->getype; ?>",id:"<?php echo $options->gedan; ?>",sj:"<?php echo $options->random; ?>",auth:"<?php echo $options->auth; ?>"},
@@ -134,8 +134,8 @@ var musicApi=[
     <?php
 }
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?246" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?247"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?250" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?250"></script>' . "\n";        
     }
 
 }

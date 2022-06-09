@@ -65,5 +65,13 @@ dianbo(a,s);
 }
 
 
-yaudio.addEventListener("error" ,function() {if(autopause==0){next(1);}else{next();}},false);
+yaudio.addEventListener("error" ,function() {
+if(autonum<=5){autonum++;
+if(autopause==0){next(1);}else{next();}
+}else{
+console.info('播放列表歌曲链接大量失效！');
+}
+},false);
+
+
 yaudio.addEventListener('ended',function() {next();},false);

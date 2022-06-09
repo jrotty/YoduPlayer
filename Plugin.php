@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.5.0
+ * @version 2.5.3
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -126,6 +126,7 @@ yaudio.loop = false;
 yaudio.volume = 0.68; 
 var sj="";var a=0;
 var autopause=0;
+var autonum=0;
 var musicArr=[];
 var musicApi=[
     {api:"<?php echo $apiurl;?>",type:"<?php echo $options->getype; ?>",id:"<?php echo $options->gedan; ?>",sj:"<?php echo $options->random; ?>",auth:"<?php echo $options->auth; ?>"},
@@ -134,8 +135,8 @@ var musicApi=[
     <?php
 }
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?250" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?250"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?253" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?253"></script>' . "\n";        
     }
 
 }

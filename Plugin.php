@@ -18,6 +18,7 @@ class YoduPlayer_Plugin implements Typecho_Plugin_Interface
 	/* 禁用插件方法 */
 	public static function deactivate(){
      Helper::removeRoute("yoduapi");
+     self::deleteFile();
 	}
     public static function config(Typecho_Widget_Helper_Form $form){
  $random = new Typecho_Widget_Helper_Form_Element_Radio(
@@ -140,4 +141,11 @@ var musicApi=[
         echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?253"></script>' . "\n";        
     }
 
+	public static function deleteFile()
+	{
+		$path = __DIR__ . '/cache/playlist/';
+		foreach (glob( $path. '*.json') as $filename) {
+		   unlink($filename);
+		}
+	}
 }

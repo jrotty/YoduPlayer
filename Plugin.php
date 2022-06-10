@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.5.3
+ * @version 2.5.4
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -57,8 +57,9 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
             null,
             Typecho_Common::randString(32),
             _t('* 接口保护'),
-            _t('加盐保护 API 接口不被滥用，自动生成无需设置。')
+            _t('加盐保护 API 接口不被滥用，自动生成禁止自行设置。')
         );
+        $t->setAttribute('class', 'hidden');
         $form->addInput($t);
     }
     

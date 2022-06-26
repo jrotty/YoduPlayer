@@ -46,7 +46,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
         
          $getype = new Typecho_Widget_Helper_Form_Element_Radio(
             'getype', array('netease' => '网易云音乐(默认)', 'tencent' => 'QQ音乐'), 'netease', '歌曲源',
-            '选择好后请在下方填写对应平台的歌单id即可');
+            '选择好后请在下方填写对应平台的歌单id即可【注：更换域名后需要禁用重启下插件否则可能无法播放！】');
         $form->addInput($getype);
         
         $gedan = new Typecho_Widget_Helper_Form_Element_Text('gedan', NULL, 

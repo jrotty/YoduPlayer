@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.5.4
+ * @version 2.5.5
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -50,7 +50,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
         $form->addInput($getype);
         
         $gedan = new Typecho_Widget_Helper_Form_Element_Text('gedan', NULL, 
-'',_t('请输入歌单id'), _t('填写该项后，播放器将使用这里的歌曲忽略上方的歌曲列表设置'));
+'',_t('请输入歌单id'), _t('填写该项后，播放器将使用这里的歌曲忽略上方的歌曲列表设置，如果发现突然歌曲全部无法播放，可以禁用重启插件(清除缓存)填写歌单再次尝试'));
         $form->addInput($gedan);
         
         $t = new Typecho_Widget_Helper_Form_Element_Text(

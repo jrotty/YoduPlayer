@@ -8,7 +8,7 @@ class YoduPlayer_Action extends Typecho_Widget implements Widget_Interface_Do {
     public function action()
     {
 $rewrite='';if(Helper::options()->rewrite==0){$rewrite='index.php/';}
-$apiurl=Helper::options()->rootUrl.'/'.$rewrite.'yoduapi';
+$apiurl=Helper::options()->siteUrl.$rewrite.'yoduapi';
 // 设置API路径
 define('API_URI', $apiurl);
 // 设置中文歌词

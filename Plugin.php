@@ -1,10 +1,10 @@
 <?php
 /**
- * 一款清爽的BGM播放器,需要您的主题支持pjax或者instantclick才能保证页面切换依旧播放
+ * 一款清爽的BGM播放器,需要您的主题支持instantclick才能保证页面切换依旧播放
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.5.5
+ * @version 2.5.6
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface

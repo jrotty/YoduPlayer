@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.6.0
+ * @version 2.6.1
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -66,7 +66,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
     
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?260';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?261';
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
         $css="";
 if(Helper::options()->Plugin('YoduPlayer')->top){
@@ -139,8 +139,8 @@ var musicApi=[
     <?php
 }
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?260" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?260"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?261" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?261"></script>' . "\n";        
     }
 
 	public static function deleteFile()

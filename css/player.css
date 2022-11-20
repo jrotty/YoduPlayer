@@ -3,8 +3,10 @@
     top: 0;
     z-index: 999;
     right: 0;
-    background: rgba(255,255,255,0.8);
-    color: black;
+    background: #009688;
+    color: white;
+    overflow: hidden;
+    border-radius: 8px 0 0 8px;
     transition: transform .5s ease;
     box-shadow: 0 0 6px 1px rgb(221,221,221);
      -webkit-box-shadow: 0 0 6px 1px rgb(221,221,221);
@@ -140,13 +142,20 @@ li.yd-lib:hover{
     background-color: #000000;
     color: white;
 }
-.dark #bgmplayer {background: rgba(0, 0, 0, 0.5);color: white;
-    box-shadow: 0 0 6px 1px rgb(100,100,100);
-     -webkit-box-shadow: 0 0 6px 1px rgb(100,100,100);
-    -moz-box-shadow: 0 0 6px 1px rgba(100,100,100,1);}
-.dark #jindu {background-color: rgba(251, 251, 251, 0.68);}
-.dark .yd-playing{border-left: 3px solid #ff0000;}
-.dark li.yd-lib:hover{
-background-color: #fff;
-color: black;
+
+#bgmplayer .board {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+#bgmplayer .blurred {
+    position: absolute;
+    inset: 0px;
+    background-size: 20000%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    filter: brightness(0.9);
 }

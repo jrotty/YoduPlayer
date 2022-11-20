@@ -34,6 +34,7 @@ document.getElementById('jindu').style.width='0%';
 if(yaudio.art.length>0){geshou='&nbsp;-&nbsp;'+yaudio.art;}
 document.getElementById('ydtitle').innerHTML = yaudio.ti+geshou;
 document.getElementById("ydfm").src=yaudio.fm;
+document.getElementById("yodubg").style.backgroundImage="url("+yaudio.fm+")";
 var playlistli=document.querySelectorAll("#playlist li");
 playlistli.forEach((value, index) => {
     playlistli[index].classList.remove("yd-playing");

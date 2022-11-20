@@ -109,6 +109,7 @@ document.getElementById("ydfm").classList.remove("paused");
 if(yaudio.art.length>0){geshou='&nbsp;-&nbsp;'+yaudio.art;}
 document.getElementById('ydtitle').innerHTML = yaudio.ti+geshou;
 document.getElementById("ydfm").src=yaudio.fm;
+document.getElementById("yodubg").style.backgroundImage="url("+yaudio.fm+")";
 var setProgress = function(value){
 		var currentSec = parseInt(value%60) < 10 ? '0' + parseInt(value%60) : parseInt(value%60),
 			ratio = value / yaudio.duration * 100;

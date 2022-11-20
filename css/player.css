@@ -155,7 +155,7 @@ li.yd-lib:hover{
     position: absolute;
     inset: 0px;
     background-size: 20000%;
-    background-position: center bottom;
+    background-position: center 38%;
     background-repeat: no-repeat;
     filter: brightness(0.9);
 }

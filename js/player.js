@@ -33,6 +33,7 @@ document.getElementById('jindu').style.width='0%';
 		yaudio.fm=sj.cover;
 if(yaudio.art.length>0){geshou='&nbsp;-&nbsp;'+yaudio.art;}
 document.getElementById('ydtitle').innerHTML = yaudio.ti+geshou;
+document.getElementById("ydfm").src=yoduplayerpath+'/images/loading.svg';
 var img = new Image();
 img.src = yaudio.fm;
 img.onload = function(){

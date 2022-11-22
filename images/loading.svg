@@ -1,0 +1,29 @@
+<svg width="80px"  height="80px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-flat-facebook" style="background: none;">
+    <defs>
+      <mask ng-attr-id="{{config.cpid}}" id="lds-flat-facebook-0ddf8933b9d18">
+        <circle cx="50" cy="50" r="45" fill="#fff"></circle>
+      </mask>
+    </defs>
+    <circle cx="50" cy="50" r="45" ng-attr-fill="{{config.base}}" fill="#c0f6d2"></circle>
+    <path ng-attr-d="{{config.d1}}" ng-attr-mask="url(#{{config.cpid}})" fill="rgb(155, 199, 170)" d="M 18 32.5 L 32 32.5 L 132 132.5 L 118 167.5 L 18 67.5 Z" mask="url(#lds-flat-facebook-0ddf8933b9d18)">
+      <animate attributeName="d" calcMode="spline" values="M 18 22 L 32 22 L 132 122 L 118 178 L 18 78 Z;M 18 32.5 L 32 32.5 L 132 132.5 L 118 167.5 L 18 67.5 Z;M 18 32.5 L 32 32.5 L 132 132.5 L 118 167.5 L 18 67.5 Z" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.2s" repeatCount="indefinite"></animate>
+    </path>
+    <path ng-attr-d="{{config.d2}}" ng-attr-mask="url(#{{config.cpid}})" fill="rgb(155, 199, 170)" d="M 43 32.5 L 57 32.5 L 157 132.5 L 143 167.5 L 43 67.5 Z" mask="url(#lds-flat-facebook-0ddf8933b9d18)">
+      <animate attributeName="d" calcMode="spline" values="M 43 24.624999999999996 L 57 24.624999999999996 L 157 124.625 L 143 175.375 L 43 75.375 Z;M 43 32.5 L 57 32.5 L 157 132.5 L 143 167.5 L 43 67.5 Z;M 43 32.5 L 57 32.5 L 157 132.5 L 143 167.5 L 43 67.5 Z" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.1s" repeatCount="indefinite"></animate>
+    </path>
+    <path ng-attr-mask="url(#{{config.cpid}})" fill="rgb(155, 199, 170)" mask="url(#lds-flat-facebook-0ddf8933b9d18)" d="M 68 32.5 L 82 32.5 L 182 132.5 L 168 167.5 L 68 67.5 Z">
+      <animate attributeName="d" calcMode="spline" values="M 68 27.25 L 82 27.25 L 182 127.25 L 168 172.75 L 68 72.75 Z;M 68 32.5 L 82 32.5 L 182 132.5 L 168 167.5 L 68 67.5 Z;M 68 32.5 L 82 32.5 L 182 132.5 L 168 167.5 L 68 67.5 Z" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="0s" repeatCount="indefinite"></animate>
+    </path>
+    <rect ng-attr-x="{{config.x1}}" ng-attr-y="{{config.y}}" ng-attr-width="{{config.width}}" ng-attr-height="{{config.height}}" ng-attr-fill="{{config.c1}}" x="18" y="32.5" width="14" height="35" fill="#ffffcb">
+      <animate attributeName="y" calcMode="spline" values="22;32.5;32.5" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.2s" repeatCount="indefinite"></animate>
+      <animate attributeName="height" calcMode="spline" values="56;35;35" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.2s" repeatCount="indefinite"></animate>
+    </rect>
+    <rect ng-attr-x="{{config.x2}}" ng-attr-y="{{config.y}}" ng-attr-width="{{config.width}}" ng-attr-height="{{config.height}}" ng-attr-fill="{{config.c2}}" x="43" y="32.5" width="14" height="35" fill="#fffdf0">
+      <animate attributeName="y" calcMode="spline" values="24.624999999999996;32.5;32.5" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.1s" repeatCount="indefinite"></animate>
+      <animate attributeName="height" calcMode="spline" values="50.75000000000001;35;35" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.1s" repeatCount="indefinite"></animate>
+    </rect>
+    <rect ng-attr-x="{{config.x3}}" ng-attr-y="{{config.y}}" ng-attr-width="{{config.width}}" ng-attr-height="{{config.height}}" ng-attr-fill="{{config.c3}}" x="68" y="32.5" width="14" height="35" fill="#ffffff">
+      <animate attributeName="y" calcMode="spline" values="27.25;32.5;32.5" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="0s" repeatCount="indefinite"></animate>
+      <animate attributeName="height" calcMode="spline" values="45.5;35;35" keyTimes="0;0.5;1" dur="1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1" begin="0s" repeatCount="indefinite"></animate>
+    </rect>
+  </svg>

@@ -4,7 +4,7 @@
  * 
  * @package YoduPlayer
  * @author Jrotty
- * @version 2.6.2
+ * @version 2.6.5
  * @link https://github.com/jrotty/YoduPlayer
  */
 class YoduPlayer_Plugin implements Typecho_Plugin_Interface
@@ -50,7 +50,17 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
         $form->addInput($getype);
         
         $gedan = new Typecho_Widget_Helper_Form_Element_Text('gedan', NULL, 
-'',_t('请输入歌单id'), _t('填写该项后，播放器将使用这里的歌曲忽略上方的歌曲列表设置，如果发现突然歌曲全部无法播放，可以禁用重启插件(清除缓存)填写歌单再次尝试'));
+'',_t('请输入歌单id'), _t('填写该项后，播放器将使用这里的歌曲忽略上方的歌曲列表设置，如果发现突然歌曲全部无法播放，可以禁用重启插件(清除缓存)填写歌单再次尝试<div style="
+    padding: 10px;
+    background: #2a2a2a;
+    color: #fff;
+    border-radius: 5px;margin-top: 10px;"
+ ><b style="color:#03a9f4;display:block; font-size:18px">什么是歌单id？</b>
+网易云某歌单网址为：https://music.163.com/#/playlist?id=7694448425<br>
+则他的歌单id就是：7694448425<br>
+QQ音乐某歌单网址为：https://y.qq.com/n/ryqq/playlist/7467921318<br>
+则他的歌单id就是：7467921318<br>
+</div>'));
         $form->addInput($gedan);
         
         $t = new Typecho_Widget_Helper_Form_Element_Text(
@@ -66,7 +76,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
     
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     public static function header(){
-        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?261';
+        $cssUrl = Helper::options()->pluginUrl . '/YoduPlayer/css/player.css?265';
         echo '<link rel="stylesheet" href="' . $cssUrl . '">';
         $css="";
 if(Helper::options()->Plugin('YoduPlayer')->top){
@@ -141,8 +151,8 @@ var musicApi=[
     <?php
 }
 
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?262" data-no-instant></script>' . "\n";
-        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?262"></script>' . "\n";        
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/player.js?265" data-no-instant></script>' . "\n";
+        echo '<script  src="'.Helper::options()->pluginUrl . '/YoduPlayer/js/prpr.js?265"></script>' . "\n";        
     }
 
 	public static function deleteFile()

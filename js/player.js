@@ -24,6 +24,7 @@ document.getElementById("ydfm").classList.add("paused");
 function dianbo(b,s=0) {
 var oyd=document.getElementById('ydmc');
 var geshou= '';
+document.getElementById("ydfm").classList.add("paused");
 document.getElementById('jindu').style.width='0%';
         a=b;//交接
         sj = musicArr[a];
@@ -39,6 +40,7 @@ img.src = yaudio.fm;
 img.onload = function(){
 document.getElementById("ydfm").src=img.src;
 document.getElementById("yodubg").style.backgroundImage="url("+img.src+")";
+document.getElementById("ydfm").classList.remove("paused");
 }
 var playlistli=document.querySelectorAll("#playlist li");
 playlistli.forEach((value, index) => {
@@ -48,7 +50,6 @@ playlistli[a].classList.add("yd-playing");
 if(s==0){
         yaudio.play();autopause=1;
 oyd.innerHTML = '<svg viewBox="0 0 20 20" fill="currentColor" class="ydicon"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>';
-document.getElementById("ydfm").classList.remove("paused");
 }
 }
 //上一首

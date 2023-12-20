@@ -10,6 +10,10 @@
 
 ### 使用方法
 
+### 停止维护
+> 该项目已停止维护（2017~2022），如果需要背景音乐插件可以看看这个基于aplayerJs的插件https://github.com/jrotty/AplayerFixed
+
+
 下载压缩包, 解压，得到名为YoduPlayer的文件夹，如果不是请将文件夹重命名为YoduPlayer，之后上传到你博客中的 /usr/plugins 目录，在后台启用即可
 
 插件后台配置歌曲格式: 
@@ -28,8 +32,6 @@
 - [Meting](https://github.com/metowolf/Meting)
 - [meting-api](https://github.com/injahow/meting-api)
 
-
-> 项目起始于2017年，2018年05月28日停止维护，后于2022年重新开始维护
 
 ### 更新历史
 

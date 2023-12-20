@@ -1,3 +1,8 @@
+
+### 停止维护
+> 该项目已停止维护（2017~2022），如果需要背景音乐插件可以看看这个基于aplayerJs的插件https://github.com/jrotty/AplayerFixed
+
+
 # YoduPlayer
 
 一款支持 instantclick 的背景音乐播放器插件（typecho博客插件）
@@ -9,10 +14,6 @@
 > 3，无 JQ，要求使用现代浏览器。
 
 ### 使用方法
-
-### 停止维护
-> 该项目已停止维护（2017~2022），如果需要背景音乐插件可以看看这个基于aplayerJs的插件https://github.com/jrotty/AplayerFixed
-
 
 下载压缩包, 解压，得到名为YoduPlayer的文件夹，如果不是请将文件夹重命名为YoduPlayer，之后上传到你博客中的 /usr/plugins 目录，在后台启用即可
 
